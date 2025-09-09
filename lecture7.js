@@ -93,6 +93,9 @@
 // obj.SayC();
 
 
+
+// Mixins
+
 class Animal{
     eat(){
         console.log("Eating")
