@@ -15,4 +15,13 @@ I am maintaining a structured record of all lectures with one new `.js` file add
 - `lecture5.js` → Lecture 5 code
 - `lecture6.js` → Lecture 6 code
 - `lecture7.js` → Lecture 7 code
-- _(and more will be added daily...)_
+- `lecture8.js` → Lecture 8 code
+- `lecture9.js` → Lecture 9 code
+- `lecture10.js` → Lecture 10 code
+- `lecture11.js` → Lecture 11 code
+- `lecture12.js` → Lecture 12 code
+- `lecture13.js` → Lecture 13 code
+- `lecture14.js` → Lecture 14 code
+- `lecture15.js` → Lecture 15 code
+- `lecture16.js` → Lecture 16 code
+- `lecture17.js` → Lecture 17 code
