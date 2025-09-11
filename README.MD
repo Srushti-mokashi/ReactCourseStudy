@@ -25,3 +25,6 @@ I am maintaining a structured record of all lectures with one new `.js` file add
 - `lecture15.js` → Lecture 15 code
 - `lecture16.js` → Lecture 16 code
 - `lecture17.js` → Lecture 17 code
+- `lecture18.js` → Lecture 18 code
+- `lecture19.js` → Lecture 19 code
+- `lecture20.js` → Lecture 20 code
