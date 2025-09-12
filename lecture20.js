@@ -12,6 +12,14 @@ document.getElementById("child").addEventListener('click', () =>{
     console.log("child clicked");
 });
 
+
+// used for stoping grandparent and parent when clicked
+
+// document.getElementById("child").addEventListener('click', (e) =>{
+    // e.stopPropagation();                          
+//     console.log("child clicked");
+// });
+
 const menu = document.getElementById('menu');
 menu.addEventListener('click',function(e){
     if(e.target.tagName ==='LI'){
