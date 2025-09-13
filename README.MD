@@ -1,4 +1,4 @@
-# ReactCouseStudy 🚀
+# ReactCourseStudy 🚀
 
 This repository contains my daily progress while studying **React.js**.  
 I am maintaining a structured record of all lectures with one new `.js` file added each day.
@@ -27,4 +27,12 @@ I am maintaining a structured record of all lectures with one new `.js` file add
 - `lecture17.js` → Lecture 17 code
 - `lecture18.js` → Lecture 18 code
 - `lecture19.js` → Lecture 19 code
+- `demo20.html` → Base html file for lecture 20
 - `lecture20.js` → Lecture 20 code
+- `lecture21.js` → Lecture 21 code
+- `lecture22.js` → Lecture 22 code
+- `lecture23.js` → Lecture 23 code
+- `index24.html` → Base html file for lecture 24
+- `lecture25.js` → Lecture 25 code
+- `debounce.html`→ Lecture 26 code
+- `throttle.html`→ Lecture 26 code
