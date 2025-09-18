@@ -4,6 +4,7 @@ const CreateTodo = () => {
   
   const [count, setCount] = useState(0);
   const [input, setInput] = useState("");
+  const tasks = ["task1", "task2", "task3", "task4"];
   const isDisabled = false;
   const handleClick = () =>{
       setCount(count + 1);
@@ -24,6 +25,11 @@ const CreateTodo = () => {
        
          Add Task</button>
          <h2>{input}</h2>
+         <ul>
+         {tasks.map((task) => (<li key = {task}>{task}</li>
+          
+         ))}
+         </ul>
     </>
   );
 };
