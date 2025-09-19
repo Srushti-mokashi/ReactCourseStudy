@@ -1,5 +1,6 @@
-import React from 'react'
+import React from 'react';
 import "./task-column.css";
+import TaskCard from '../TaskCard/TaskCard';
 const TaskColumn = (props) => {
   return (
     <div>
@@ -9,6 +10,7 @@ const TaskColumn = (props) => {
          {props.title}
        
         </h2>
+        <TaskCard />
       </section>
     </div>
   );
