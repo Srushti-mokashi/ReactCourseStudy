@@ -12,9 +12,9 @@ const TaskForm = () => {
          />
          <div className="task_form_bottom">
          <div>
-           <Tag/>
-            <Tag/>
-            <Tag/>
+           <Tag tagName="DEV"/>
+            <Tag tagName="QA"/>
+            <Tag tagName="Product Owner"/>
             </div>
         
          <div>

@@ -1,9 +1,10 @@
 import React from 'react';
 import "./tag.css";
-const Tag = () => {
+const Tag = (props) => {
+    const { tagName } = props;
   return (
     <>
-        <button className='tag'>DEV</button>
+        <button className='tag'> { tagName }</button>
     </>
   );
 };
