@@ -2,21 +2,38 @@ import './task-form.css';
 import Tag from "../Tag/Tag";
 import { useState } from "react";
 const TaskForm = () => {
-   const [task, setTask] = useState("");
-   const [status, setStatus] = useState("");
-   const handleTask = (e) => {
-      setTask(e.target.value);
+
+   const [taskData,setTaskData] = useState({
+      task: "",
+      status: "Ready for Development",
+   });
+   const handleChange = (e) => {
+      const { name, value } = e.target;
+      setTaskData((prev) => {
+         return { ...prev, [name]: value };
+      });
    };
-   const handleStatusChange = (e) => {
-      setStatus(e.target.value);
-   };
-   console.log(task, status);
+   const handleSubmit=(e)=>{
+      e.preventDefault();
+      console.log(taskData);
+   }
+   console.log(taskData);
+   // const [task, setTask] = useState("");
+   // const [status, setStatus] = useState("");
+   // const handleTask = (e) => {
+   //    setTask(e.target.value);
+   // };
+   // const handleStatusChange = (e) => {
+   //    setStatus(e.target.value);
+   // };
+   // console.log(task, status);
   return (
     
        <header className="app_header">
-          <form>
+          <form onSubmit={handleSubmit}>
             <input
             type="text" 
+            name="task"
             className="task_input" 
             placeholder="Enter task details"
             onChange={handleTask}
@@ -29,7 +46,7 @@ const TaskForm = () => {
             </div>
          
          <div>
-         <select className="task_status" onChange={handleStatusChange}>
+         <select className="task_status" name="status" onChange={handleStatusChange}>
             <option value="Ready for Development">Ready for Development</option>
             <option value="In Progress">In Progress</option>
             <option value="Ready for test">Ready for test</option>
