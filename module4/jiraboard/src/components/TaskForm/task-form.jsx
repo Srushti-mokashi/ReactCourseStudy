@@ -1,7 +1,7 @@
 import './task-form.css';
 import Tag from "../Tag/Tag";
 import { useState } from "react";
-const TaskForm = () => {
+const TaskForm = ({ setTasks }) => {
 
    const [taskData,setTaskData] = useState({
       task: "",
@@ -21,7 +21,11 @@ const TaskForm = () => {
    };
    const handleSubmit=(e)=>{
       e.preventDefault();
-      console.log(taskData);
+      setTasks((prev) => {
+         return [...prev, taskData]
+   });
+      
+      
    }
    
    const selectedTag = (tag) => {
@@ -29,7 +33,7 @@ const TaskForm = () => {
          const isSelected= prev.tags.includes(tag);
          const tags = isSelected ? prev.tags.filter((item) => item !== tag) : [...prev.tags, tag];
          return { ...prev.tags, tag}
-      })
+      });
    
       //    if(taskData.tags.some((item) => item === tag)){
       //      const filterTags = taskData.tags.filter((item) => item !== tag);
