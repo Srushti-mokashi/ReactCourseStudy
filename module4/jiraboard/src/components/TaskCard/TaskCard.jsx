@@ -4,7 +4,7 @@ import deleteIcon from "../../assets/Bin.png";
 import Tag from "../Tag/Tag"; 
 
 
-const TaskCard = ( {title, tags }) => {
+const TaskCard = ( {title, tags, handleDelete, index }) => {
   return (
     <article>
       <p className="task-text">{title}</p>
@@ -13,10 +13,10 @@ const TaskCard = ( {title, tags }) => {
         {tags.map((tag, index) => (
           <Tag key={index} tagName={tag} slected />
         ))}
-          <Tag tagName="DEV" />
-          <Tag tagName="QA" />
+          
         </div>
-        <div className="task_delete">
+        <div className="task_delete" onClick={() =>{
+          handleDelete(index)}}>
           <img src={deleteIcon} alt="Delete task" className="delete_icon" />
         </div>
       </div>
