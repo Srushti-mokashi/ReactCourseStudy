@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './app.css';
 import TaskForm from './components/TaskForm/task-form';
 import TaskColumn from './components/TaskColumn/task-column';
 import closedIcon from './assets/checked.png';
+
+const existingTasks = localStorage.getItem("tasks");
+console.log(existingTasks);
+
 const App = () => {
-  const [tasks, setTasks] =  useState([]);
+  const [tasks, setTasks] =  useState(JSON.parse(existingTasks));
+  useEffect(()  => {
+       localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
 
   const handleDelete = (taskIndex) => {
     const newTasks = tasks.filter((task, index) => index !== taskIndex);
