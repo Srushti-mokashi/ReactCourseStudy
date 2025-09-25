@@ -4,9 +4,13 @@ import deleteIcon from "../../assets/Bin.png";
 import Tag from "../Tag/Tag"; 
 
 
-const TaskCard = ( {title, tags, handleDelete, index }) => {
+const TaskCard = ( {title, tags, handleDelete, index, setActiveCard }) => {
   return (
-    <article>
+    <article className="task_card" draggable onDragStart={() =>{setActiveCard(index);
+    }}
+    onDragEnd={() => {setActiveCard(null);
+    }}
+    >
       <p className="task-text">{title}</p>
       <div className="task_card_bottom_line">
         <div className="task_card_tags">
