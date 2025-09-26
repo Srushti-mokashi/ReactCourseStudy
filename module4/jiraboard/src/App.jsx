@@ -13,7 +13,20 @@ const App = () => {
        localStorage.setItem("tasks", JSON.stringify(tasks) );
   }, [tasks]);
 
-  const  [activeCard, setActiveCard] = useState(null); setActiveCard={setActiveCard}
+  const  [activeCard, setActiveCard] = useState(null); 
+
+  const onDrop=(status, position)=>{
+    console.log(`${activeCard} is going to place ${status} and at the position ${position}`);
+    if (activeCard == null || activeCard == undefined) return;
+
+    const tasktoMove = tasks[activeCard];
+    const updatedTasks = tasks.filter((task, index) => index !== activeCard);
+    updatedTasks.splice(position,0,{
+      ...tasktoMove,
+      status: status,
+    });
+     setTasks(updatedTasks);
+  };
 
   const handleDelete = (taskIndex) => {
     const newTasks = tasks.filter((task, index) => index !== taskIndex);
@@ -25,10 +38,10 @@ const App = () => {
     <h1 style={{ textAlign: "center", margin: "50px"}}>Jira Board</h1>
      <TaskForm setTasks={setTasks}/>
      <main className="app_main">
-      <TaskColumn title="Ready for Development" tasks={tasks} status="Ready for Development" handleDelete={handleDelete} setActiveCard={setActiveCard} />
-      <TaskColumn  title="In Progress" tasks={tasks} status="In Progress" handleDelete={handleDelete} setActiveCard={setActiveCard}/>
-      <TaskColumn  title="Ready for test" tasks={tasks} status="Ready for test" handleDelete={handleDelete} setActiveCard={setActiveCard}/>
-      <TaskColumn  title="closed" icon={closedIcon} tasks={tasks} status="Closed" handleDelete={handleDelete} setActiveCard={setActiveCard}/>
+      <TaskColumn title="Ready for Development" tasks={tasks} status="Ready for Development" handleDelete={handleDelete} setActiveCard={setActiveCard}  onDrop={onDrop}/>
+      <TaskColumn  title="In Progress" tasks={tasks} status="In Progress" handleDelete={handleDelete} setActiveCard={setActiveCard} onDrop={onDrop}/>
+      <TaskColumn  title="Ready for test" tasks={tasks} status="Ready for test" handleDelete={handleDelete} setActiveCard={setActiveCard} onDrop={onDrop}/>
+      <TaskColumn  title="closed" icon={closedIcon} tasks={tasks} status="Closed" handleDelete={handleDelete} setActiveCard={setActiveCard} onDrop={onDrop}/>
      </main>
      <h2>Active card{activeCard}</h2>
     </div>
