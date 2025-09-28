@@ -12,7 +12,10 @@
 
 # This comarison process is called reconciliation
 
-🔵
+🔵Understanding the React Project structure
+
+# node_modules :
+
 🔵
 🔵
 🔵
