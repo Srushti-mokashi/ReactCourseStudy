@@ -1,0 +1,14 @@
+nav{
+    border: 1px solid black;
+}
+
+.navbar_list{
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar_list a{
+    margin: 5px 10px;
+}
