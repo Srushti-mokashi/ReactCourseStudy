@@ -5,6 +5,7 @@ import Products from "./components/Products/Products";
 import Articles from "./components/Articles/Articles";
 import Admin from "./components/Admin/Admin";
 import Contact from './components/Contact/contact';
+import NotFound from './components/NotFound/NotFound';
 import Navbar from './components/Navbar/Navbar';
 
 const App = () => {
@@ -19,6 +20,7 @@ const App = () => {
        <Route path="/articles" element={<Articles />} />
        <Route path="/admin" element={<Admin />} />
        <Route path="/contact" element={<Contact />} />
+       <Route path="*" element={<NotFound />} />
       
       </Routes>
 
