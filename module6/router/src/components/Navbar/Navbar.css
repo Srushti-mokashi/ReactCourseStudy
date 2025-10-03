@@ -3,12 +3,17 @@ nav{
 }
 
 .navbar_list{
-    list-style-type: none;
+    list-style: none;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.navbar_list a{
+.navbar_list a  {
     margin: 5px 10px;
+}
+
+.navbar_list a.active {
+    font-weight: 500;
+    color: green;
 }
