@@ -1,12 +1,18 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom';
 
 const SingleProduct = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
+
+  const handleBack = () => {
+    navigate(-2); // Navigate back to the previous page
+  };
   
   return (
     <div>
       <h2>SingleProduct - { id }</h2>
+      <button onClick={handleBack}>Go Back</button>
     </div>
   )
 }
