@@ -3,8 +3,11 @@ import React, { useEffect } from 'react'
 const Sellers = () => {
   const  [name, setName] = useState("");
   useEffect(()=>{
-    document.title = `Name is ${name}`;
+    // document.title = `Name is ${name}`;
     console.log("Component Mount.!!");
+    return () =>{
+      console.log("Component Unmount.!!");
+    }
   }, [name]);
   
   return (
