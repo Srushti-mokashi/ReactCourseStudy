@@ -16,19 +16,39 @@ const Sellers = () => {
   // }, [name]);
   
   useEffect(() =>{
-    setIsLoading(true);
-    axios
-    .get("https://jsonplaceholder.typicode.com/users")
-    .then((res) => {
-      setUsers(res.data);
-      setIsLoading(false);
-     })
-     .catch((err) => {
-      setErrors(err.message);
-      setIsLoading(false);
-     });
+
+    fetchUsers();
+    // setIsLoading(true);
+    // axios
+    // .get("https://jsonplaceholder.typicode.com/users")
+    // .then((res) => {
+    //   setUsers(res.data);
+    //   setIsLoading(false);
+    //  })
+    //  .catch((err) => {
+    //   setErrors(err.message);
+    //   setIsLoading(false);
+    //  });
     
   },[]);
+
+  const fetchUsers = async ()=>{
+    try{
+      setIsLoading(true);
+      const res = await axios.get("https://jsonplaceholder.typicode.com/users");
+      setUsers(res.data);
+      setIsLoading(false);
+    }catch(err){
+        setErrors(err.message);
+        setIsLoading(false);
+    
+    } finally {
+    console.log("All is good");
+  }
+};
+  //  const addUser = ()={
+
+  //  }
   return (
     <>
        <h3>Admin Sellers Page</h3>
@@ -38,6 +58,7 @@ const Sellers = () => {
               }}
 
               />
+              {/* <button onClick={addUser}></button> */}
               {isLoading && <Loader />}
               {errors && <em>{errors}</em>}
               {users.map((user) => (
