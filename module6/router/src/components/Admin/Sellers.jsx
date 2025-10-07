@@ -5,6 +5,7 @@ import Loader from '../common/Loader';
 const Sellers = () => {
   useState [users, setUsers] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [errors, setErrors] = useState("");
   // const  [name, setName] = useState("");
   // useEffect(()=>{
   //   // document.title = `Name is ${name}`;
@@ -21,11 +22,13 @@ const Sellers = () => {
     .then((res) => {
       setUsers(res.data);
       setIsLoading(false);
+     })
+     .catch((err) => {
+      setErrors(err.message);
+      setIsLoading(false);
      });
-    //  fetch("https://jsonplaceholder.typicode.com/users")
-    //  .then((res) => res.json())
-    //  .then((data) => console.log(data)).catch((error)=>{})
-  },[])
+    
+  },[]);
   return (
     <>
        <h3>Admin Sellers Page</h3>
@@ -36,6 +39,7 @@ const Sellers = () => {
 
               />
               {isLoading && <Loader />}
+              {errors && <em>{errors}</em>}
               {users.map((user) => (
                 <p key={user.id}>{user.name}</p>
               ))}
