@@ -61,3 +61,5 @@ Lecture 2: UnderStanding the Virtual DOM and Reconciliation Process
 
 1. Virtual DOM updates are batched and optimized
 2. Only the parts of the DOM that changed are updated, not the entire DOM
+
+Lecture 3:
