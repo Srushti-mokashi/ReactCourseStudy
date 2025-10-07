@@ -72,7 +72,14 @@ const Sellers = () => {
             setErrors(err.message);
             setUsers(users);
           });
-      }
+      };
+      const UpdateUser = (user) => {
+        const UpdateUser = {
+        ...user,
+        name: user.name + "  Updated",
+      };
+      setUsers(users.map((u) => (u.id === user.id ? updateUser : u)));
+    };
   return (
     <>
        <h3>Admin Sellers Page</h3>
@@ -94,7 +101,7 @@ const Sellers = () => {
                               <p key={user.id}>{user.name}</p>
                         </td>
                         <td>
-                            <button onClick={()=>{ deleteUser(user.id);
+                            <button onClick={()=>{ Update(user);
 
                             }}
                                 >Delete
