@@ -52,7 +52,8 @@ const Sellers = () => {
         id: users.length + 1,
        };
        setUsers([newUser, ...users]);
-       axios.post("https://jsonplaceholder.typicode.com/users", newUser)
+       axios
+        .post("https://jsonplaceholder.typicode.com/users", newUser)
         .then((res) =>{
            setUsers([res.data, ...users]);
           })
@@ -61,6 +62,16 @@ const Sellers = () => {
             setUsers(users)
         
         });
+      } 
+      
+      const deleteUser=(id)=>{
+        setUsers(users.filter((user) => user.id !== id));
+        axios
+          .delete("https://jsonplaceholder.typicode.com/users/${id}")
+          .catch((err) => {
+            setErrors(err.message);
+            setUsers(users);
+          });
       }
   return (
     <>
@@ -74,9 +85,29 @@ const Sellers = () => {
               <button onClick={addUser}>Add user</button>
               {isLoading && <Loader />}
               {errors && <em>{errors}</em>}
-              {users.map((user) => (
-                <p key={user.id}>{user.name}</p>
+              <table>
+                <tbody>
+                    {users.map((user) => (
+                      <tr key={user.id}>
+                        <td>
+                        {" "}
+                              <p key={user.id}>{user.name}</p>
+                        </td>
+                        <td>
+                            <button onClick={()=>{ deleteUser(user.id);
+
+                            }}
+                                >Delete
+
+                            </button>
+                        </td>
+                               
+                      </tr>
+                     
               ))}
+                </tbody>
+              </table>
+              
     </>
   
 
