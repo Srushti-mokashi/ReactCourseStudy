@@ -31,3 +31,42 @@ When you use a weather app, it calls a Weather API to get real-time weather data
    Example Use: Netflix, Google Cloud services
    Pros: Low latency, high performance
    Cons: Harder to debug, not as human-readable
+
+4. gRPC API (Google Remote Procedure Call)
+
+Uses Protocol Buffers (binary format) instead of JSON.
+
+Very fast, best for microservices communication.
+
+Uses HTTP/2 for streaming and multiplexing.
+
+Example Use: Netflix, Google Cloud services
+
+Pros: Low latency, high performance
+
+Cons: Harder to debug, not as human-readable
+
+5. WebSocket API
+
+Enables real-time, two-way communication between client and server.
+
+Used in chat apps, live notifications, and online games.
+
+Example: Real-time stock prices or messaging apps
+
+Pros: Instant updates
+
+Cons: Needs more management for scalability and security
+
+6. RPC (Remote Procedure Call) API
+
+Calls functions directly on another server as if local.
+
+Variants:
+
+XML-RPC: Uses XML
+
+JSON-RPC: Uses JSON
+Pros: Simple and direct
+
+Cons: Tight coupling between client and server
