@@ -1,21 +1,21 @@
-import React, {useState} from "raect";
+// import React, {useState} from "raect";
 
-const MyComponent = () => {
-    const [count, setCount] = useState(0);
-  return (
-    <div>
-       <Display/>
-       <Controls/>
-    </div>
-  )
-};
+// const MyComponent = () => {
+//     const [count, setCount] = useState(0);
+//   return (
+//     <div>
+//        <Display/>
+//        <Controls/>
+//     </div>
+//   )
+// };
 
-const Display(){
+// const Display(){
 
-}
+// }
 
-const Controls(){
+// const Controls(){
 
-}
+// }
 
-export default MyComponent
+// export default MyComponent
